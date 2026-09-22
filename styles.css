@@ -1,0 +1,212 @@
+/* ==========================================================================
+   Base Styles & Design Variables
+   ========================================================================== */
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --text-color: #1e293b;
+  --text-muted: #64748b;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --line-height: 1.6;
+  --max-width: 860px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  line-height: var(--line-height);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.brand a:hover {
+  color: var(--primary-color);
+}
+
+nav ul.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.15s ease-in-out;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Main Content Layout
+   ========================================================================== */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #0f172a;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.35rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.meta-info {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Sections & Articles
+   ========================================================================== */
+section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 2rem;
+}
+
+article {
+  margin-bottom: 1.25rem;
+}
+
+article:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+  background-color: #ffffff;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Media Query (Narrow Screens / Mobile)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  nav ul.nav-menu {
+    gap: 0.75rem 1rem;
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.85rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  section {
+    padding: 1.25rem 1rem;
+  }
+}
