@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header>
     <div class="header-container">
       <div class="brand"><a href="index.html#profile">Abby Myers</a></div>
       <nav aria-label="Main Navigation">
         <ul class="nav-menu">
-          <li><a href="index.html#profile">Profile</a></li>
+          <li><a href="index.html#profile" aria-current="page">Profile</a></li>
           <li><a href="index.html#skills">Skills</a></li>
           <li><a href="index.html#experience">Experience</a></li>
           <li><a href="index.html#contact">Contact</a></li>
@@ -23,7 +24,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Profile Section -->
     <section id="profile">
       <h1>Abby Myers</h1>
@@ -79,8 +80,8 @@
       <article>
         <h3>Contact Information</h3>
         <ul>
-          <li>Email: <a href="mailto:amyer36@lsu.edu">amyer36@lsu.edu</a></li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/abigail-myers50/" target="_blank" rel="noopener noreferrer">linkedin.com/in/abigail-myers50/</a></li>
+          <li>Email: <a href="mailto:amyer36@lsu.edu" aria-label="Email Abby Myers at amyer36@lsu.edu">amyer36@lsu.edu</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/abigail-myers50/" target="_blank" rel="noopener noreferrer" class="break-anywhere" aria-label="Abby Myers on LinkedIn (opens in a new tab)">linkedin.com/in/abigail-myers50/</a></li>
           <li>Location: Baton Rouge, LA</li>
         </ul>
       </article>

@@ -5,7 +5,7 @@
   --primary-color: #2563eb;
   --primary-hover: #1d4ed8;
   --text-color: #1e293b;
-  --text-muted: #64748b;
+  --text-muted: #475569;
   --bg-color: #f8fafc;
   --card-bg: #ffffff;
   --border-color: #e2e8f0;
@@ -20,6 +20,25 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -28,6 +47,45 @@ body {
   line-height: var(--line-height);
   color: var(--text-color);
   background-color: var(--bg-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   Accessibility Utilities & Focus Styles
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+  z-index: 1000;
+  transition: top 0.15s ease-in-out;
+}
+
+.skip-link:focus-visible {
+  top: 0;
+  outline: 3px solid #0f172a;
+  outline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+
+/* Scoped word-wrapping for long URLs and unbroken content */
+.break-anywhere,
+#contact a {
+  overflow-wrap: anywhere;
 }
 
 /* ==========================================================================
@@ -56,6 +114,7 @@ header {
   font-weight: 700;
   color: var(--text-color);
   text-decoration: none;
+  border-radius: 4px;
 }
 
 .brand a:hover {
@@ -68,21 +127,33 @@ nav ul.nav-menu {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 nav a {
+  display: inline-block;
   color: var(--text-muted);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: color 0.15s ease-in-out;
+  padding: 0.4rem 0.65rem;
+  border-radius: 4px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-nav a:hover,
-nav a:focus {
+nav a:hover {
   color: var(--primary-color);
+  background-color: #f1f5f9;
   text-decoration: underline;
+}
+
+nav a[aria-current="page"] {
+  color: var(--primary-color);
+  font-weight: 700;
+  background-color: #eff6ff;
+  border-bottom: 2px solid var(--primary-color);
+  text-decoration: none;
 }
 
 /* ==========================================================================
@@ -92,6 +163,18 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2.5rem 1.5rem;
+}
+
+main a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  border-radius: 2px;
+  transition: color 0.15s ease-in-out;
+}
+
+main a:hover {
+  color: var(--primary-hover);
 }
 
 h1 {
@@ -139,6 +222,7 @@ p {
    Sections & Articles
    ========================================================================== */
 section {
+  scroll-margin-top: 5.5rem;
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
@@ -188,10 +272,11 @@ footer p {
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
+    gap: 0.75rem;
   }
 
   nav ul.nav-menu {
-    gap: 0.75rem 1rem;
+    gap: 0.4rem 0.5rem;
   }
 
   main {
@@ -207,6 +292,7 @@ footer p {
   }
 
   section {
+    scroll-margin-top: 7.5rem;
     padding: 1.25rem 1rem;
   }
 }
